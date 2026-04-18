@@ -1,0 +1,47 @@
+<section id="skills" class="section-padding bg-[var(--color-bg)]">
+  <div class="container-custom">
+
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        <span class="gradient-text">Skills & Expertise</span>
+      </h2>
+      <p class="text-[var(--color-text-secondary)] max-w-2xl mx-auto">
+        Technologies and tools I work with to build enterprise applications and scalable solutions.
+      </p>
+    </div>
+
+    <!-- Category Filter Tabs -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      @for (category of categories; track category) {
+        <button
+          (click)="setCategory(category)"
+          class="px-5 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+          [class]="activeCategory() === category
+            ? 'bg-[var(--color-accent)] text-[var(--color-bg)] shadow-lg shadow-[var(--color-accent)]/20'
+            : 'bg-[var(--color-bg-2)] text-[var(--color-text-secondary)] border border-[var(--color-border)] hover:text-[var(--color-accent)] hover:border-[var(--color-accent)]'">
+          {{ category }}
+        </button>
+      }
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      @for (skill of filteredSkills; track skill.name) {
+        <div class="card flex flex-col items-center justify-center py-6 px-4 text-center group">
+          <!-- Icon -->
+          <i [class]="skill.icon" [style.color]="skill.color || ''" class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-200"></i>
+          <!-- Skill Name -->
+          <span class="text-[var(--color-text)] font-medium text-sm group-hover:text-[var(--color-accent)] transition-colors duration-200">
+            {{ skill.name }}
+          </span>
+          <!-- Category Badge -->
+          <span class="text-[10px] text-[var(--color-text-secondary)] mt-2 uppercase tracking-wider">
+            {{ skill.category }}
+          </span>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>

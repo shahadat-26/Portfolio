@@ -40,3 +40,10 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Claude
+.claude/
+
+# Project docs (local only)
+project.md
+Learning\ progress.md

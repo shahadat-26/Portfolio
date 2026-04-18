@@ -1,0 +1,51 @@
+<section id="experience" class="section-padding bg-[var(--color-bg-2)]/30">
+  <div class="container-custom">
+
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        <span class="gradient-text">Work Experience</span>
+      </h2>
+      <p class="text-[var(--color-text-secondary)] max-w-2xl mx-auto">
+        Building enterprise-grade applications for government and international organizations.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    @for (exp of experiences; track exp.company) {
+      <div class="relative pl-8 border-l-2 border-[var(--color-accent)]/30">
+
+        <!-- Timeline Dot -->
+        <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[var(--color-accent)] border-2 border-[var(--color-bg)]"></div>
+
+        <!-- Role Header -->
+        <div class="mb-6 flex items-center gap-4">
+          <img [src]="exp.logo" [alt]="exp.company"
+               class="w-14 h-14 rounded-full object-contain bg-white p-1 border border-[var(--color-border)]" />
+          <div>
+            <h3 class="text-xl md:text-2xl font-bold text-[var(--color-text)]">{{ exp.role }}</h3>
+            <p class="text-[var(--color-accent)] font-medium">{{ exp.company }} &bull; {{ exp.location }}</p>
+            <p class="text-[var(--color-text-secondary)] text-sm mt-1">{{ exp.period }}</p>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          @for (project of exp.projects; track project.name) {
+            <div class="card">
+              <h4 class="text-[var(--color-text)] font-semibold mb-1">{{ project.name }}</h4>
+              <p class="text-[var(--color-accent)] text-xs font-medium mb-2">{{ project.client }}</p>
+              <p class="text-[var(--color-text-secondary)] text-sm mb-4">{{ project.description }}</p>
+              <div class="flex flex-wrap gap-2">
+                @for (tech of project.stack; track tech) {
+                  <span class="tech-badge">{{ tech }}</span>
+                }
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    }
+
+  </div>
+</section>

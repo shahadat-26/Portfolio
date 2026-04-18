@@ -1,0 +1,56 @@
+<nav
+  class="fixed top-0 w-full z-50 transition-all duration-300"
+  [class.nav-scrolled]="isScrolled()"
+  [class.nav-top]="!isScrolled()">
+
+  <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+
+    <!-- Logo / Name -->
+    <a href="#" (click)="scrollTo($event, '#hero')"
+       class="flex items-center gap-2 text-xl font-bold gradient-text tracking-tight">
+      <img src="logos/Shahadat.jpg" alt="Shahadat" class="w-8 h-8 rounded-full object-cover">
+      Shahadat
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <div class="hidden md:flex gap-6">
+      @for (link of navLinks; track link.href) {
+        <a [href]="link.href"
+           (click)="scrollTo($event, link.href)"
+           class="text-sm text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors duration-200 font-medium">
+          {{ link.label }}
+        </a>
+      }
+    </div>
+
+    <!-- Mobile Hamburger Button -->
+    <button
+      class="md:hidden flex flex-col gap-1.5 p-2"
+      (click)="toggleMobileMenu()"
+      aria-label="Toggle menu">
+      <span class="w-6 h-0.5 bg-[var(--color-text)] transition-all duration-300"
+            [class.rotate-45]="isMobileMenuOpen()"
+            [class.translate-y-2]="isMobileMenuOpen()"></span>
+      <span class="w-6 h-0.5 bg-[var(--color-text)] transition-all duration-300"
+            [class.opacity-0]="isMobileMenuOpen()"></span>
+      <span class="w-6 h-0.5 bg-[var(--color-text)] transition-all duration-300"
+            [class.-rotate-45]="isMobileMenuOpen()"
+            [class.-translate-y-2]="isMobileMenuOpen()"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  @if (isMobileMenuOpen()) {
+    <div class="md:hidden bg-[var(--color-bg)]/95 backdrop-blur-md border-t border-[var(--color-border)]">
+      <div class="flex flex-col px-4 py-4 gap-3">
+        @for (link of navLinks; track link.href) {
+          <a [href]="link.href"
+             (click)="scrollTo($event, link.href)"
+             class="text-[var(--color-text-secondary)] hover:text-[var(--color-accent)] transition-colors duration-200 py-2 text-sm font-medium">
+            {{ link.label }}
+          </a>
+        }
+      </div>
+    </div>
+  }
+</nav>

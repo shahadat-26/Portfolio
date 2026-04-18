@@ -1,0 +1,67 @@
+<section id="about" class="section-padding bg-[var(--color-bg-2)]/30">
+  <div class="container-custom">
+
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        <span class="gradient-text">About Me</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+      <!-- Left: Bio + Stats -->
+      <div>
+        <p class="text-[var(--color-text-secondary)] text-base md:text-lg leading-relaxed mb-6">
+          I'm <span class="text-blue-400 font-semibold">Muhammad Shahadat Hossain</span>, a software engineer
+          from Bangladesh with a deep-rooted passion for building things that solve real world problems.
+          During my graduation period at <span class="text-blue-400 font-semibold">SUST</span>, my journey
+          began with solving algorithmic problems that taught me how to think before I code.
+        </p>
+
+        <p class="text-[var(--color-text-secondary)] text-base md:text-lg leading-relaxed mb-6">
+          Over the past 4 years at Streams Tech Ltd,
+          I've built enterprise-grade systems for organizations like
+          <span class="text-blue-400 font-semibold">Bangladesh Railway</span> and
+          <span class="text-blue-400 font-semibold">CARE Bangladesh</span> — applications that institutions
+          depend on every day. From web platforms managing railway infrastructure to cross-platform desktop
+          software for storm water modeling, I've shipped code that operates at scale.
+        </p>
+
+        <p class="text-[var(--color-text-secondary)] text-base md:text-lg leading-relaxed mb-8">
+          I believe in clean architecture, writing maintainable code coping with the pace of business,
+          and having endless curiosity to learn new things. Always ready to take on the next challenge
+          that pushes boundaries.
+        </p>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 gap-4">
+          @for (stat of stats; track stat.label) {
+            <div class="text-center p-4 rounded-lg bg-[var(--color-bg)]/50 border border-[var(--color-border)]">
+              <span class="text-2xl md:text-3xl font-bold text-white">{{ stat.value }}</span>
+              <p class="text-[var(--color-text-secondary)] text-xs mt-1 font-medium">{{ stat.label }}</p>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Right: Skill Category Cards (Mubin style — single column, icon + title + description) -->
+      <div class="flex flex-col gap-4">
+        @for (skillCard of skillCards; track skillCard.title) {
+          <div class="card flex items-start gap-4 py-5 px-6">
+            @if (skillCard.image) {
+              <img [src]="skillCard.image" [alt]="skillCard.title" class="w-7 h-7 mt-0.5 rounded object-cover">
+            } @else {
+              <span class="text-2xl mt-0.5">{{ skillCard.icon }}</span>
+            }
+            <div>
+              <h3 class="text-[var(--color-text)] font-bold text-base mb-1">{{ skillCard.title }}</h3>
+              <p class="text-[var(--color-text-secondary)] text-sm leading-relaxed">{{ skillCard.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+
+    </div>
+  </div>
+</section>
