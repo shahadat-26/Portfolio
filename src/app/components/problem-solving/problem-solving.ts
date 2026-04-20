@@ -22,7 +22,7 @@ export class ProblemSolving {
       name: 'LeetCode',
       username: 'Shahadat26',
       description: 'Interview-Level Coding Challenges',
-      solved: 217,
+      solved: 218,
       profileUrl: 'https://leetcode.com/Shahadat26',
     },
     {

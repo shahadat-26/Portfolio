@@ -32,11 +32,23 @@
         <!-- Projects Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           @for (project of exp.projects; track project.name) {
-            <div class="card">
-              <h4 class="text-[var(--color-text)] font-semibold mb-1">{{ project.name }}</h4>
-              <p class="text-[var(--color-accent)] text-xs font-medium mb-2">{{ project.client }}</p>
-              <p class="text-[var(--color-text-secondary)] text-sm mb-4">{{ project.description }}</p>
-              <div class="flex flex-wrap gap-2">
+            <div class="card flex flex-col">
+              <div class="flex-1">
+                <h4 class="text-[var(--color-text)] font-semibold mb-1">{{ project.name }}</h4>
+                <p class="text-[var(--color-accent)] text-xs font-medium mb-2">{{ project.client }}</p>
+                <p class="text-[var(--color-text-secondary)] text-sm mb-4" [innerHTML]="sanitize(project.description)"></p>
+                @if (project.facilities) {
+                  <div class="mb-4">
+                    <p class="text-[var(--color-text)] text-xs font-semibold mb-2">Key Facilities</p>
+                    <ul class="list-disc list-inside space-y-1">
+                      @for (facility of project.facilities; track facility) {
+                        <li class="text-[var(--color-text-secondary)] text-xs">{{ facility }}</li>
+                      }
+                    </ul>
+                  </div>
+                }
+              </div>
+              <div class="flex flex-wrap gap-2 mt-auto pt-4">
                 @for (tech of project.stack; track tech) {
                   <span class="tech-badge">{{ tech }}</span>
                 }

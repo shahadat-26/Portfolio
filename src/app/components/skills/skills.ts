@@ -14,7 +14,7 @@ interface Skill {
   styleUrl: './skills.css',
 })
 export class Skills {
-  categories = ['All', 'Backend', 'Frontend', 'Database', 'Desktop', 'DevOps'];
+  categories = ['All', 'Backend', 'Frontend', 'Database', 'Desktop', 'DevOps', 'Script', 'Others'];
   activeCategory = signal('All');
 
   skills: Skill[] = [
@@ -22,7 +22,6 @@ export class Skills {
     { name: 'C#', icon: 'devicon-csharp-plain colored', category: 'Backend' },
     { name: '.NET', icon: 'devicon-dot-net-plain colored', category: 'Backend' },
     { name: '.NET Core', icon: 'devicon-dotnetcore-plain colored', category: 'Backend' },
-    { name: 'Python', icon: 'devicon-python-plain colored', category: 'Backend' },
     { name: 'REST APIs', icon: 'devicon-fastapi-plain colored', category: 'Backend' },
     { name: 'RabbitMQ', icon: 'devicon-rabbitmq-original colored', category: 'Backend' },
     { name: 'Entity Framework', icon: 'devicon-dotnetcore-plain colored', category: 'Backend' },
@@ -49,6 +48,15 @@ export class Skills {
     { name: 'Nginx', icon: 'devicon-nginx-original colored', category: 'DevOps' },
     { name: 'AWS', icon: 'devicon-amazonwebservices-plain-wordmark colored', category: 'DevOps' },
     { name: 'CI/CD', icon: 'devicon-githubactions-plain colored', category: 'DevOps' },
+
+    // Backend (cont.)
+    { name: 'Postman', icon: 'devicon-postman-plain colored', category: 'Backend' },
+
+    // Script
+    { name: 'Python', icon: 'devicon-python-plain colored', category: 'Script' },
+
+    // Others
+    { name: 'Jira', icon: 'devicon-jira-plain colored', category: 'Others' },
   ];
 
   setCategory(category: string) {
