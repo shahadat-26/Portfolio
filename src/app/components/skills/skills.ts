@@ -26,8 +26,8 @@ export class Skills {
     { name: 'RabbitMQ', icon: 'devicon-rabbitmq-original colored', category: 'Backend' },
     { name: 'Entity Framework', icon: 'devicon-dotnetcore-plain colored', category: 'Backend' },
     { name: 'Redis', icon: 'devicon-redis-plain colored', category: 'Backend' },
-    { name: 'JWT', icon: 'devicon-jwt-plain colored', category: 'Backend' },
-    { name: 'BCrypt', icon: 'devicon-jwt-plain colored', category: 'Backend' },
+    { name: 'JWT', icon: 'fa-solid fa-key', category: 'Backend', color: '#d63aff' },
+    { name: 'BCrypt', icon: 'fa-solid fa-lock', category: 'Backend', color: '#4a90e2' },
 
     // Frontend
     { name: 'Angular', icon: 'devicon-angularjs-plain colored', category: 'Frontend' },
