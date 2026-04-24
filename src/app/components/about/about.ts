@@ -30,7 +30,7 @@ export class About {
     {
       icon: '⚙️',
       title: 'Backend Development',
-      description: '.NET, .NET Core, C#, REST APIs, Entity Framework, RabbitMQ, WebSocket',
+      description: '.NET, .NET Core, C#, REST APIs, Entity Framework, Redis, RabbitMQ, WebSocket',
     },
     {
       icon: '🎨',
@@ -45,7 +45,7 @@ export class About {
     {
       icon: '🗄️',
       title: 'Database Management',
-      description: 'PostgreSQL, Redis',
+      description: 'PostgreSQL',
     },
     {
       icon: '',

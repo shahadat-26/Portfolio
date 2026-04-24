@@ -25,6 +25,7 @@ export class Skills {
     { name: 'REST APIs', icon: 'devicon-fastapi-plain colored', category: 'Backend' },
     { name: 'RabbitMQ', icon: 'devicon-rabbitmq-original colored', category: 'Backend' },
     { name: 'Entity Framework', icon: 'devicon-dotnetcore-plain colored', category: 'Backend' },
+    { name: 'Redis', icon: 'devicon-redis-plain colored', category: 'Backend' },
 
     // Frontend
     { name: 'Angular', icon: 'devicon-angularjs-plain colored', category: 'Frontend' },
@@ -36,7 +37,6 @@ export class Skills {
 
     // Database
     { name: 'PostgreSQL', icon: 'devicon-postgresql-plain colored', category: 'Database' },
-    { name: 'Redis', icon: 'devicon-redis-plain colored', category: 'Database' },
 
     // Desktop
     { name: 'WPF', icon: 'devicon-windows11-original colored', category: 'Desktop' },
