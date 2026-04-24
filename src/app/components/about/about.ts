@@ -30,7 +30,7 @@ export class About {
     {
       icon: '⚙️',
       title: 'Backend Development',
-      description: '.NET, .NET Core, C#, REST APIs, Entity Framework, Redis, RabbitMQ, WebSocket',
+      description: '.NET, .NET Core, C#, REST APIs, Entity Framework, Redis, RabbitMQ, WebSocket, JWT, BCrypt',
     },
     {
       icon: '🎨',
