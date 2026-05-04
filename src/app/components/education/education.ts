@@ -16,7 +16,7 @@ interface EducationItem {
 export class Education {
   educations: EducationItem[] = [
     {
-      institution: 'Shahjalal University of Science and Engineering',
+      institution: 'Shahjalal University of Science and Technology',
       logo: 'logos/sustlogo.png',
       degree: 'B.Sc (Engineering) in Computer Science and Engineering',
       period: 'Feb 2017 – Dec 2021',
